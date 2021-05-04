@@ -2,12 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <title>LazyCnt</title>
 </head>
 <body>
-    <form action="/short" method="POST">
-    <input type="text" name="redirect_url"/>
-    <input type="submit" value="submit" />
-    </form>
+    <h1>URL Shortener</h1>
+    <div class="url-form">
+        <form action="/short" method="POST">
+            <input type="text" name="redirect_url"/>
+            <input type="submit" value="Do the deed"/>
+        </form>
+    </div>
 </body>
 </html>
