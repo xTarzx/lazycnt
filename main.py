@@ -3,7 +3,7 @@ from shortener import Shortener
 
 domain = input("If you have setup domain in HOSTS enter here >> ")
 if not domain or domain == "":
-    domain = "lazy.cnt"
+    domain = "127.0.0.1"
 
 
 app = Flask("lazycnt")
