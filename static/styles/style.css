@@ -13,7 +13,7 @@ h1 {
     margin-bottom: 150px;
 }
 
-input[type=submit] {
+.butn {
     height: 30px;
     width: 130px;
     font-weight: 600;
@@ -24,16 +24,20 @@ input[type=submit] {
 
 }
 
-input[type=submit]:hover {
+.butn:hover {
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(black, .5);
     background: rgb(123, 202, 255);
     transform: translateY(.5px);
 }
 
-input[type=submit]:active {
+.butn:active {
     transform: translateY(1px);
     background: rgb(123, 196, 255);
+}
+
+.copy {
+    width: 80px;
 }
 
 .url-form input[type=text] {
@@ -44,5 +48,14 @@ input[type=submit]:active {
 
 
 .short input[type=text]{
-    
+    outline: none;
+    text-align: center;
+    font-size: inherit;
+    box-shadow: 0 10px 15px rgba(black, .5);
+    margin-top: 50px;
+    height: 20px;
+    width: 220px;
+    background: rgb(124, 165, 255);
+    border: none;
+    border-radius: 3px;
 }

@@ -10,15 +10,13 @@ app = Flask("lazycnt")
 
 shortener = Shortener()
 
-@app.route("/")
+@app.route("/", methods=["POST", "GET"])
 def main():
-    return render_template("index.html")
-
-@app.route("/short", methods=["POST"])
-def short():
-    redirect_url = request.form["redirect_url"]
-    shortened_url = "http://{}/{}".format(domain, shortener.generate_key(redirect_url))
-    return render_template("short.html", shortened_url=shortened_url)
+    if request.method == "POST":
+        redirect_url = request.form["redirect_url"]
+        shortened_url = "http://{}/{}".format(domain, shortener.generate_key(redirect_url))
+        return render_template("index.html", shortened_url=shortened_url, shortened=True)
+    return render_template("index.html", shortened=False)
 
 @app.route("/<key>")
 def redirect_to(key):

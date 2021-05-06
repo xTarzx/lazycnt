@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
     <title>LazyCnt</title>
 </head>
 <body>
     <h1>URL Shortener</h1>
     <div class="url-form">
-        <form action="/short" method="POST">
+        <form action="/" method="POST">
             <input type="text" name="redirect_url"/>
-            <input type="submit" value="Do the deed"/>
+            <input class="butn" type="submit" value="Do the deed"/>
         </form>
     </div>
+    {% if shortened %}
+    <div class="short">
+        <input type="text" readonly value={{shortened_url}} id="shortened_url">
+        <button class="butn copy" onclick="toClipboard('#shortened_url')">Copy</button>
+    </div>
+    {% endif %}
 </body>
 </html>
