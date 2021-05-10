@@ -22,8 +22,15 @@ class Shortener:
     def add_to_database(self, key, url):
         self.database.insert(key, url)
     
+    def gel(self, user_key):
+        key = ""
+        for char in user_key:
+            if char in string.digits:
+                key += char
+        return key
+
     def get_url(self, key):
-        search = self.database.get(key)
+        search = self.database.get(self.gel(key))
         if search:
             return search[0][1]
         return None
