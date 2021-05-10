@@ -14,9 +14,12 @@
             <input class="butn" type="submit" value="Do the deed"/>
         </form>
     </div>
-    {% if shortened %}
+    {% if error|default(false, true) %}
+        <p>{{error}}</p>
+    {% endif %}
+    {% if key|default(None, true) %}
     <div class="short">
-        <input type="text" readonly value={{shortened_url}} id="shortened_url">
+        <input type="text" readonly value={{domain}}/{{key}} id="shortened_url">
         <button class="butn copy" onclick="toClipboard('#shortened_url')">Copy</button>
     </div>
     {% endif %}
