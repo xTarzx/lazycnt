@@ -27,5 +27,5 @@ def redirect_to(key):
         return redirect(url)
     return render_template("index.html", error="Tf is that key")
 
-app.run("","80")
+app.run("", "80")
 shortener.cleanup()
